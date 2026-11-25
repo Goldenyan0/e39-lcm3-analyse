@@ -6,6 +6,14 @@ et outils pour écrire et **tester sur PC** un correctif EEPROM avant de le mett
 Ce dépôt ne contient **aucun logiciel BMW** : ni lecture de la ROM, ni image EEPROM, ni fichier de données BMW.
 Les scripts travaillent sur une lecture que vous avez faite vous-même sur votre propre module.
 
+## Cadre du projet
+
+Projet personnel d'**étude et de rétro-ingénierie**, mené dans un cadre précis : comprendre le logiciel d'un calculateur de série, documenter ce qu'il fait et apprendre à vérifier une modification avant de l'écrire.
+
+- Les modifications de logiciel évoquées ici **ne sont pas homologuées**. Elles ne doivent pas être utilisées sur un véhicule circulant sur la voie publique sans nouvelle réception du véhicule (DREAL en France) et déclaration à l'assureur. Renseignez-vous sur la réglementation de votre pays.
+- Ce dépôt ne diffuse **aucun fichier BMW** (ni logiciel, ni lecture de calculateur, ni données de codage) et aucune donnée personnelle.
+- Aucune garantie : toute utilisation se fait sous votre seule responsabilité.
+
 ## Ce qu'on a trouvé
 
 | Question | Réponse | Statut |
