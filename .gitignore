@@ -1,0 +1,3 @@
+# Images EEPROM : jamais dans le dépôt (contiennent le codage et le correctif BMW)
+*.bin
+__pycache__/

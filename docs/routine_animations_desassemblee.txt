@@ -1,0 +1,126 @@
+; Animations LCM v3.2d (eeprom_animations_v3_2d.bin) relues par le désassembleur (dis_hc11.py)
+; F1 0D4B-0D67 et F3-F6 0D68-0DF1 : inchangées. Code 0DF2-0EDC, table 0EDD-0EF0 (masque, octet bas 01xx), 0EF1-0EF2 = 00
+  0DF2  C6 40          LDAB   #$40
+  0DF4  F7 02 23       STAB   $0223
+  0DF7  F7 02 31       STAB   $0231
+  0DFA  CE 05 60       LDX    #$0560
+  0DFD  D6 85          LDAB   $85
+  0DFF  C4 04          ANDB   #$04
+  0E01  E1 00          CMPB   $00,X
+  0E03  27 16          BEQ    $0E1B
+  0E05  E7 00          STAB   $00,X
+  0E07  27 12          BEQ    $0E1B
+  0E09  6D 03          TST    $03,X
+  0E0B  26 32          BNE    $0E3F
+  0E0D  13 87 20 0A    BRCLR  $87,#$20,$0E1B
+  0E11  6C 01          INC    $01,X
+  0E13  6D 02          TST    $02,X
+  0E15  26 04          BNE    $0E1B
+  0E17  86 03          LDAA   #$03
+  0E19  A7 02          STAA   $02,X
+  0E1B  7D 04 63       TST    $0463
+  0E1E  26 0A          BNE    $0E2A
+  0E20  6D 02          TST    $02,X
+  0E22  27 06          BEQ    $0E2A
+  0E24  6A 02          DEC    $02,X
+  0E26  26 02          BNE    $0E2A
+  0E28  6F 01          CLR    $01,X
+  0E2A  A6 01          LDAA   $01,X
+  0E2C  81 05          CMPA   #$05
+  0E2E  26 07          BNE    $0E37
+  0E30  6F 01          CLR    $01,X
+  0E32  6C 03          INC    $03,X
+  0E34  4F             CLRA   
+  0E35  20 27          BRA    $0E5E
+  0E37  6D 03          TST    $03,X
+  0E39  27 11          BEQ    $0E4C
+  0E3B  12 87 20 0D    BRSET  $87,#$20,$0E4C
+  0E3F  6F 03          CLR    $03,X
+  0E41  6F 06          CLR    $06,X
+  0E43  4F             CLRA   
+  0E44  5F             CLRB   
+  0E45  FD 01 C8       STD    $01C8
+  0E48  B7 01 CA       STAA   $01CA
+  0E4B  39             RTS    
+  0E4C  B6 02 42       LDAA   $0242
+  0E4F  84 20          ANDA   #$20
+  0E51  4C             INCA   
+  0E52  A1 07          CMPA   $07,X
+  0E54  27 10          BEQ    $0E66
+  0E56  A7 07          STAA   $07,X
+  0E58  12 87 20 E3    BRSET  $87,#$20,$0E3F
+  0E5C  86 E7          LDAA   #$E7
+  0E5E  A7 05          STAA   $05,X
+  0E60  86 0B          LDAA   #$0B
+  0E62  A7 06          STAA   $06,X
+  0E64  6F 04          CLR    $04,X
+  0E66  E6 06          LDAB   $06,X
+  0E68  27 51          BEQ    $0EBB
+  0E6A  C1 0B          CMPB   #$0B
+  0E6C  22 D1          BHI    $0E3F
+  0E6E  6C 04          INC    $04,X
+  0E70  A6 04          LDAA   $04,X
+  0E72  81 12          CMPA   #$12
+  0E74  26 19          BNE    $0E8F
+  0E76  6F 04          CLR    $04,X
+  0E78  6D 05          TST    $05,X
+  0E7A  27 06          BEQ    $0E82
+  0E7C  6A 05          DEC    $05,X
+  0E7E  C1 01          CMPB   #$01
+  0E80  27 0D          BEQ    $0E8F
+  0E82  5A             DECB   
+  0E83  E7 06          STAB   $06,X
+  0E85  26 08          BNE    $0E8F
+  0E87  6D 03          TST    $03,X
+  0E89  27 B8          BEQ    $0E43
+  0E8B  C6 0B          LDAB   #$0B
+  0E8D  E7 06          STAB   $06,X
+  0E8F  C1 01          CMPB   #$01
+  0E91  26 09          BNE    $0E9C
+  0E93  6D 03          TST    $03,X
+  0E95  26 AC          BNE    $0E43
+  0E97  CC 01 20       LDD    #$0120
+  0E9A  20 38          BRA    $0ED4
+  0E9C  6D 03          TST    $03,X
+  0E9E  26 04          BNE    $0EA4
+  0EA0  1E 07 20 03    BRSET  $07,X,#$20,$0EA7
+  0EA4  50             NEGB   
+  0EA5  CB 0D          ADDB   #$0D
+  0EA7  58             ASLB   
+  0EA8  18 CE 0E D9    LDY    #$0ED9
+  0EAC  18 3A          ABY    
+  0EAE  BD 0E 43       JSR    $0E43
+  0EB1  18 EC 00       LDD    $00,Y
+  0EB4  CE 01 00       LDX    #$0100
+  0EB7  3A             ABX    
+  0EB8  A7 00          STAA   $00,X
+  0EBA  39             RTS    
+  0EBB  4F             CLRA   
+  0EBC  13 87 20 0E    BRCLR  $87,#$20,$0ECE
+  0EC0  13 86 18 0A    BRCLR  $86,#$18,$0ECE
+  0EC4  D6 88          LDAB   $88
+  0EC6  C4 05          ANDB   #$05
+  0EC8  17             TBA    
+  0EC9  3D             MUL    
+  0ECA  58             ASLB   
+  0ECB  58             ASLB   
+  0ECC  17             TBA    
+  0ECD  5F             CLRB   
+  0ECE  36             PSHA   
+  0ECF  AA 08          ORAA   $08,X
+  0ED1  32             PULA   
+  0ED2  27 08          BEQ    $0EDC
+  0ED4  B7 01 C9       STAA   $01C9
+  0ED7  F7 01 CA       STAB   $01CA
+  0EDA  A7 08          STAA   $08,X
+  0EDC  39             RTS    
+  0EDD  db 20 CA   ; Angel D
+  0EDF  db 01 C9   ; Angel G
+  0EE1  db 20 C8   ; Clign D
+  0EE3  db 40 C9   ; Anti D
+  0EE5  db 20 C9   ; Crois D
+  0EE7  db 02 C8   ; Plein D
+  0EE9  db 04 C8   ; Plein G
+  0EEB  db 10 C9   ; Crois G
+  0EED  db 80 C8   ; Clign G
+  0EEF  db 04 C9   ; Anti G
